@@ -1,0 +1,23 @@
+public class Solution {
+
+    /**
+     * 采用简单的单个元素移动法
+     * 时间复杂度：O(kn)，空间复杂度：O(1)
+     *
+     */
+    public void rotate(int[] nums, int k) {
+        if (k == 0) {
+            return;
+        }
+
+        int n = nums.length;
+
+        for (int ki = 1; ki <= k; ki++) {
+            int last = nums[n - 1];
+            for (int i = n - 1; i > 0; i--) {
+                nums[i] = nums[i - 1];
+            }
+            nums[0] = last;
+        }
+    }
+}
