@@ -1,0 +1,18 @@
+class Solution {
+    public void moveZeroes(int[] nums) {
+        // The non zero index in array
+        int j = 0;
+        for (int i = 0; i < nums.length; i++) {
+            // if current value is not zero, should be moved
+            if (nums[i] != 0) {
+                nums[j] = nums[i];
+                // i is greater or equal j, if i equal j, current value should be non zero value.
+                if (i != j) {
+                    nums[i] = 0;
+                }
+                // the next non zero index
+                j++;
+            }
+        }
+    }
+}
